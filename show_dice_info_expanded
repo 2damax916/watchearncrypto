@@ -1,0 +1,10 @@
+SELECT
+    u.username,
+    u.email,
+    SUM(dh.profit) AS total_profit
+FROM
+    users u
+JOIN
+    dice_history dh ON u.id = dh.user_id
+GROUP BY
+    u.id, u.username, u.email;
